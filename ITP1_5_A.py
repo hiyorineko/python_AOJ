@@ -23,9 +23,6 @@ while True:
     h, w = map(int, input().split())
     if h == 0 and w == 0:
         break
-    line = ""
-    for i in range(w):
-        line = line + "#"
     for i in range(h):
-        print(line)
+        print("#"*w)
     print()
