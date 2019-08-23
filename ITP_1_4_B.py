@@ -10,6 +10,6 @@
 #
 # Constraints
 # 0 < r < 10,000
+import math
 r = float(input())
-pi = 3.14159265359
-print("%.6f %.6f"%((r**2)*pi, (r*2)*pi))
+print("%.6f %.6f"%((r**2)*math.pi, (r*2)*math.pi))
