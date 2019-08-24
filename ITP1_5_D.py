@@ -37,11 +37,7 @@
 n = int(input())
 _ = list()
 for i in range(1,n+1):
-    if i % 3 == 0:
+    if i % 3 == 0 or "3" in str(i):
         _.append(str(i))
         continue
-    for j in list(str(i)):
-        if int(j) == 3:
-            _.append(str(i))
-            break
 print(" " + " ".join(_))
