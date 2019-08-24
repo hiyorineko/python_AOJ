@@ -32,20 +32,7 @@ while True:
     if h == 0 and w == 0:
         break
     for i in range(h):
-        if i % 2 == 0:
-            _ = "#"
-            for j in range(w - 1):
-                if j % 2 == 0:
-                    _ = _ + "."
-                else:
-                    _ = _ + "#"
-            print(_)
-        else:
-            _ = "."
-            for j in range(w - 1):
-                if j % 2 == 0:
-                    _ = _ + "#"
-                else:
-                    _ = _ + "."
-            print(_)
+        for j in range(w):
+            print('#.'[(i + j) & 1], end='')
+        print()
     print()
