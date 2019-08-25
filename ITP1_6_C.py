@@ -19,52 +19,14 @@
 # 管理の過程で１部屋の入居者数が０より少なくなることはない。
 # 管理の過程で１部屋の入居者数が9より多くなることはない。
 n = int(input())
-b1 = list()
-b2 = list()
-b3 = list()
-b4 = list()
-_1 = list()
-_2 = list()
-_3 = list()
-_4 = list()
-for i in range(1,4):
-    for j in range(1,11):
-        _1.append(0)
-        _2.append(0)
-        _3.append(0)
-        _4.append(0)
-    b1.append(_1)
-    b2.append(_2)
-    b3.append(_3)
-    b4.append(_4)
-    _1 = list()
-    _2 = list()
-    _3 = list()
-    _4 = list()
+table = [[[0]*10 for i in range (0,3)] for k in range (0,4)]
 
 for i in range(n):
     b, f, r, v = map(int, input().split())
-    if b == 1:
-        b1[f-1][r-1] += v
-    elif b == 2:
-        b2[f-1][r-1] += v
-    elif b == 3:
-        b3[f-1][r-1] += v
-    else:
-        b4[f-1][r-1] += v
+    table[b-1][f-1][r-1] += v
 
-print(" " + " ".join(map(str, b1[0])))
-print(" " + " ".join(map(str, b1[1])))
-print(" " + " ".join(map(str, b1[2])))
-print("#"*20)
-print(" " + " ".join(map(str, b2[0])))
-print(" " + " ".join(map(str, b2[1])))
-print(" " + " ".join(map(str, b2[2])))
-print("#"*20)
-print(" " + " ".join(map(str, b3[0])))
-print(" " + " ".join(map(str, b3[1])))
-print(" " + " ".join(map(str, b3[2])))
-print("#"*20)
-print(" " + " ".join(map(str, b4[0])))
-print(" " + " ".join(map(str, b4[1])))
-print(" " + " ".join(map(str, b4[2])))
+for i in range(4):
+    for j in range(3):
+        print(" %s" % " ".join(map(str, table[i][j])))
+    if i < 3:
+        print("#"*20)
