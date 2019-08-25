@@ -19,7 +19,7 @@
 # 管理の過程で１部屋の入居者数が０より少なくなることはない。
 # 管理の過程で１部屋の入居者数が9より多くなることはない。
 n = int(input())
-table = [[[0]*10 for i in range (0,3)] for k in range (0,4)]
+table = [[[0]*10 for i in range(0, 3)] for k in range(0, 4)]
 
 for i in range(n):
     b, f, r, v = map(int, input().split())
