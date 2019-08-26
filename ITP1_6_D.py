@@ -29,10 +29,8 @@ for i in range(n):
     A.append(list(map(int, input().split())))
 for i in range(m):
     b.append(int(input()))
-c = list()
 for i in range(n):
     _ = 0
     for j in range(m):
-        _ = _ + (A[i][j] * b[j])
-    c.append(_)
-[print(i) for i in c]
+        _ += (A[i][j] * b[j])
+    print(_)
