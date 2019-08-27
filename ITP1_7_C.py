@@ -13,13 +13,12 @@
 # Constraints
 # 1 ≤ r, c ≤ 100
 # 0 ≤ 要素 ≤ 100
-from functools import reduce
 r, c = map(int, input().split())
 _ = list()
 __ = [0 for i in range(c + 1)]
 for i in range(r):
     _.append(list(map(int, input().split())))
-    _[i].append(reduce(lambda x, y: x + y, _[i]))
+    _[i].append(sum(_[i]))
     __ = [(__[j] + _[i][j]) for j in range(c + 1)]
     print(" ".join(map(str, _[i])))
 print(" ".join(map(str, __)))
