@@ -15,4 +15,4 @@
 s = input()
 p = input()
 s = s+s
-print("Yes") if s.__contains__(p) else print("No")
+print("Yes") if p in s else print("No")
