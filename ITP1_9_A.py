@@ -19,9 +19,4 @@
 # 単語 W の数を出力して下さい。
 import sys
 W = input()
-c = 0
-T = sys.stdin.read().lower().split()
-for i in T:
-    if W == i:
-        c += 1
-print(c)
+print(sys.stdin.read().lower().split().count(W))
