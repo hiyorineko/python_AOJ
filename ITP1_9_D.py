@@ -18,29 +18,13 @@
 # 1≤q≤100
 # 0≤a≤b<strの長さ
 # replace 命令では b−a+1=pの長さ
-s = list(map(str, input()))
+s = list(input())
 for i in range(int(input())):
     command = input().split()
+    a, b = int(command[1]), int(command[2])
     if command[0] == 'print':
-        tmp = list()
-        for j in range(int(command[1]), int(command[2])+1):
-            tmp.append(s[j])
-        print("".join(tmp))
+        print("".join(s[a:b+1]))
     elif command[0] == 'reverse':
-        head = list()
-        tale = list()
-        c = 0
-        for j in range(len(s)):
-            if j < int(command[1]):
-                head.append(s.pop(j-c))
-                c += 1
-            elif int(command[2]) < j:
-                tale.append(s.pop(j-c))
-                c += 1
-        s.reverse()
-        s = list("".join(head) + "".join(s) + "".join(tale))
+        s[a:b+1] = reversed(s[a:b+1])
     elif command[0] == 'replace':
-        param = list(command[3])
-        for j in range(len(s)):
-            if int(command[1]) <= j <= int(command[2]):
-                s[j] = param.pop(0)
+        s[a:b+1] = command[3]
